@@ -1,4 +1,5 @@
-import ExpenseItem from "./components/Expenses/ExpenseItem";
+import ExpenseItem from "./components/Expenses/Expenses/ExpenseItem";
+import NewExpense from "./components/Expenses/NewExpenses/NewExpenses";
 
 const App = () => {
   const expenses = [
@@ -48,7 +49,7 @@ const App = () => {
       } */}
         
         
-
+      <NewExpense />
       <ExpenseItem
         id={expenses[0].id}
         title={expenses[0].title}
