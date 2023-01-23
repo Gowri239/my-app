@@ -1,14 +1,16 @@
 import { useState } from "react";
-import ExpensesFilter from "./components/Expenses/Expenses/ExpenseFilter";
-import ExpenseItem from "./components/Expenses/Expenses/ExpenseItem";
+// import ExpensesFilter from "./components/Expenses/Expenses/ExpenseFilter";
+// import ExpenseItem from "./components/Expenses/Expenses/ExpenseItem";
 import NewExpense from "./components/Expenses/NewExpenses/NewExpenses";
+import Expenses from "./components/Expenses/Expenses/Expenses";
+import './components/Expenses/Expenses/Expenses.css'
 
 
 const App = () => {
   const expenses = [];
 
   const [addExpense,setAddExpense] = useState(expenses)
-  const [filteredYear,setFilterdYear] = useState('2020')
+  // const [filteredYear,setFilterdYear] = useState('2020')
 
   const addExpenseHandler = expense => {
     console.log('In app.js')
@@ -19,21 +21,22 @@ const App = () => {
     
   }
 
-  const filterChangeHandler = selectedYear => {
-    setFilterdYear(selectedYear)
-  }
+  // const filterChangeHandler = selectedYear => {
+  //   setFilterdYear(selectedYear)
+  // }
 
-  const filteredExpenses = addExpense.filter(expense => {
-    return expense.date.getFullYear().toString() === filteredYear
-  })
+  // const filteredExpenses = addExpense.filter(expense => {
+  //   return expense.date.getFullYear().toString() === filteredYear
+  // })
   return (
     <div>
-      <div>
+      {/* <div> */}
         <NewExpense onAddExpense={addExpenseHandler}/>
-        <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
-      </div>
+        <Expenses expenses={addExpense}></Expenses>
+        {/* <ExpensesFilter selected={filteredYear} onChangeFilter={filterChangeHandler}/>
+      </div> */}
       
-      {
+      {/* {
         filteredExpenses.map(expense => {
           return <ExpenseItem
             key={expense.id}
@@ -42,7 +45,7 @@ const App = () => {
             date={expense.date}
           ></ExpenseItem>
         })
-      }
+      } */}
     </div>
   );
 }
