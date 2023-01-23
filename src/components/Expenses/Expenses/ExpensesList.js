@@ -8,25 +8,11 @@ const ExpensesList = (props) => {
 
   if(props.item.length === 1) {
     return (
-        <div>
-        <ul className="expenses-list">
-          {props.item.map((expense) => {
-            return (
-              <div key={expense.id}>
-                <ExpenseItem
-                  key={expense.id}
-                  title={expense.title}
-                  amount={expense.amount}
-                  date={expense.date}
-                />
-              </div>
-            )
-          })}
-        </ul>
+        
         <div>
             <h2 className="expense-list__fallback"> Only single Expense here. Please add more...</h2>
         </div>
-        </div>
+       
 
     )
     
